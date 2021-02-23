@@ -1,6 +1,7 @@
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
+import css from "rollup-plugin-css-only";
 
 export default {
   input: "./lib/index.js",
@@ -16,5 +17,10 @@ export default {
       paths: id => id.startsWith("svelte/") && `${id.replace("svelte", ".")}`
     }
   ],
-  plugins: [svelte(), resolve(), commonjs()]
+  plugins: [
+    svelte({ emitCss: false }),
+    css({ name: 'bundle' }),
+    resolve(),
+    commonjs(),
+  ]
 };

@@ -1,4 +1,5 @@
 <script>
+  import {Form} from 'sveltestrap';
   import {setContext} from 'svelte';
   import {createForm} from '../create-form';
   import {key} from './key';
@@ -36,7 +37,7 @@
   });
 </script>
 
-<form on:submit={handleSubmit} {...$$restProps}>
+<Form on:submit={handleSubmit} {...$$restProps}>
   <slot
     {form}
     {errors}
@@ -47,4 +48,4 @@
     {updateField}
     {updateTouched}
   />
-</form>
+</Form>

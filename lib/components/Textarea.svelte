@@ -4,8 +4,17 @@
 
   export let name;
 
-  const {form, handleChange} = getContext(key);
+  const {errors, form, handleChange} = getContext(key);
 </script>
 
 <!-- prettier-ignore -->
-<textarea {name} on:change={handleChange} on:blur={handleChange} {...$$props}>{$form[name]}</textarea>
+<textarea
+
+  {name}
+  on:change={handleChange}
+  on:blur={handleChange}
+  {...$$props}
+  class={$errors[name]?'form-control is-invalid':'form-control'}
+>
+  {$form[name]}
+</textarea>
