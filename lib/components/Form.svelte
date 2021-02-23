@@ -9,6 +9,8 @@
   export let validationSchema = null;
   export let onSubmit;
 
+  // export let showErrors = true
+
   const {
     form,
     errors,

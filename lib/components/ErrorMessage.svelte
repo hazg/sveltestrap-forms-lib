@@ -8,5 +8,5 @@
 </script>
 
 {#if $errors[name]}
-  <small {...$$props}>{$errors[name]}</small>
+  <small class="text-danger" {...$$props}>{$errors[name]}</small>
 {/if}
