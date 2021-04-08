@@ -17,6 +17,7 @@
   value={$form[name]}
   on:change={handleChange}
   on:blur={handleChange}
+  on:keyup={handleChange}
   class={$errors[name] ? 'form-control is-invalid' : 'form-control'}
   {...$$props}
 />
